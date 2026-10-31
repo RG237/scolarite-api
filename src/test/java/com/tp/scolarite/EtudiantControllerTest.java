@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
 class EtudiantControllerTest {
@@ -32,5 +33,14 @@ void etudiantConserveSaFiliere() {
     e.setFiliere("Reseaux");
 
 assertEquals("Reseaux", e.getFiliere());
+}
+@Test
+void trouverRetourneLEtudiantDemande() {
+    Etudiant e = new Etudiant("Essomba", "Paul", "paul@mail.cm");
+    when(repository.findById(1L)).thenReturn(Optional.of(e));
+
+    Etudiant resultat = controller.trouver(1L);
+
+    assertEquals("Essomba", resultat.getNom());
 }
 }
