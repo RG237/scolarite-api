@@ -14,6 +14,7 @@ public class Etudiant {
     private String nom;
     private String prenom;
     private String email;
+    private String filiere;
 
     public Etudiant() {}
 
@@ -34,4 +35,6 @@ public class Etudiant {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+    public String getFiliere() { return filiere; }
+public void setFiliere(String filiere) { this.filiere = filiere; }
 }
