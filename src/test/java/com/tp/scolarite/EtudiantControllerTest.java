@@ -25,12 +25,12 @@ class EtudiantControllerTest {
         assertEquals(1, resultat.size());
         assertEquals("Mballa", resultat.get(0).getNom());
     }
-    
+
     @Test
 void etudiantConserveSaFiliere() {
     Etudiant e = new Etudiant("Mballa", "Jean", "jean@mail.cm");
     e.setFiliere("Reseaux");
 
-    assertEquals("Cybersecurite", e.getFiliere());
+assertEquals("Reseaux", e.getFiliere());
 }
 }
