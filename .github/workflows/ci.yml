@@ -1,4 +1,4 @@
-name: CI
+name: CI scolarite-api (RG237)
 on: [push, pull_request]
 
 jobs:
@@ -11,9 +11,11 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
+      - name: Message de depart
+        run: echo "Pipeline TP2 de RG237 - branche ${{ github.ref_name }}"
       - run: chmod +x mvnw
       - run: ./mvnw -B verify
       - uses: actions/upload-artifact@v4
         with:
-          name: application-jar
+          name: scolarite-jar-rg237
           path: target/*.jar
